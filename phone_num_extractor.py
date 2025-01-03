@@ -1,3 +1,11 @@
+"""
+phone_num_extractor.py
+Implements a text processing task as well as a simple evaluation pipeline.
+The code is pruned to highlight the underlying logical flow.
+
+Authors: Rui Ouyang, Gemini 5.1 flash, gpt-4o mini
+Year: 2025
+"""
 from pathlib import Path
 import pandas as pd
 import re
