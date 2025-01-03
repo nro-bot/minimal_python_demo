@@ -7,109 +7,113 @@ numbers from free-form text data using regex. It includes basic steps for
 text preprocessing, extracting data, and evaluating the results against
 ground truth values.
 
+## Quickstart
+
+```bash
+git clone [this repo]
+cd minimal_python_repo
+pip install uv
+uv venv
+source .venv\Scripts\activate
+(venv) uv sync
+(venv) uv run phone_number_extractor.py
+(venv) deactivate # when you are done
+```
+
 ## Setup
 
 You can install and manage dependencies and run this project using UV (a
-lightweight package manager) or pip (traditional package manager). Below
-are the instructions for both methods.
+lightweight package manager) or pip (traditional package manager).
 
-The first step is to create a virtual environment to isolate the project
-dependencies from your system’s Python installation. This ensures that the
-packages used in the project don’t conflict with other projects. i
+### Overview
 
-**Once activated, you should see `(env)` at the beginning of the terminal prompt, indicating that the virtual environment is active.**
+1. Create a virtual environment to isolate the project dependencies from your system’s Python installation
 
-After creating it, make sure installation steps are all inside that
-environment.
+2. Activate the environment
 
+    **Once activated, you should see `(env)` at the beginning of the terminal prompt, indicating that the virtual environment is active.**
+ 
 
-### Option 1: Using pip 
+3. Install dependencies
 
-**pip** is the traditional package manager for Python. Follow these steps:
+    **Make sure to install dependencies inside the environment.**
 
-1. Create a Virtual Environment
+4. Run the script
 
-Open a terminal (or command prompt) and navigate to the directory where you have the project.
+ Once the dependencies are installed, run the script to extract phone numbers from text and evaluate the results.
 
-Run the following command to create a virtual environment:
+### Option 1: Using pip
+
+**pip** is the traditional package manager for Python.
+
+1. Create a Virtual Environment:
+
+   Open a terminal (or command prompt) and navigate to the directory where you have the project, then create a virtual environment named `env`
+
      ```bash
      python -m venv env
      ```
 
-This will create a virtual environment named `env`.
+2. Activate it:
 
-2. Activate the Virtual Environment
+    **Windows**:
+      ```bash
+      source .\env\Scripts\activate
+      ```
 
-Once the virtual environment is created, activate it:
+   **macOS/Linux**:
+      ```bash
+      source ./env/bin/activate
+      ```
 
-- **Windows** (Command Prompt):
-  ```bash
-  .\env\Scripts\activate
-  ```
-- **macOS/Linux**:
-  ```bash
-  source ./env/bin/activate
-  ```
-3. Install dependencies 
+3. Install dependencies:
 
-Make sure you are in the venv, then install project dependencies:
-```bash
-(env) pip install -r requirements.txt
-```
+   Make sure you are in the venv, then install project dependencies:
+    ```bash
+    (env) pip install -r requirements.txt
+    ```
+
+4. Run the script with Python directly:
+    ```bash
+    (env) python -m phone_number_extractor.py
+    ```
 
 ### Option 2: Using uv
 
 [**UV**](https://uv.readthedocs.io/en/latest/) is a minimalist package manager for Python projects. Here's how to set it up.
 
-1. Install **UV**:
+0. Install **UV**:
     ```bash
     pip install uv
     ```
 
-2. Navigate to the project directory, then create virtual environment
+1. Navigate to the project directory, then create virtual environment:
     ```bash
-    deactivate  # just in case already in a virtual environment
+    deactivate  # just in case already in a virtualenv from somewhere else
     uv venv
     ```
 
-2. Activate the virtual environment. 
-- **Windows** (Command Prompt):
-  ```bash
-  .\.venv\Scripts\activate
-  ```
-- **macOS/Linux**:
-  ```bash
-  source .venv/bin/activate
-  ```
+2. Activate the virtual environment:
+   ```bash
+   source .\venv\Scripts\activate # Windows
+   source ./venv/bin/activate # Mac/Linux
+   ```
 
-3. Install project dependencies defined in `pyproject.toml`:
+3. Install project dependencies. Note: these are defined in `pyproject.toml`.
     ```bash
-    (env) uv install
+    (venv) uv sync
     ```
 
-## Running the Script
-
-Once the dependencies are installed, run the script to extract phone numbers from text and evaluate the results.
-
-### With UV:
-
-```bash
-(env) uv run phone_number_extractor.py
-```
-
-### With Python:
-
-Alternatively, run the script with Python directly:
-
-```bash
-(env) python -m phone_number_extractor.py
-```
+4. Run
+    ```bash
+    (venv) uv run phone_number_extractor.py
+    ```
 
 ## License
 
 TBD
 
-## Design Decision Notes
+## Notes 
 
 - **Type Hints**: Use type hints for clarity and better IDE support. Type hints also allow use of static checkers like `mypy` to catch errors before code is run.
 
@@ -117,6 +121,15 @@ TBD
 
 - **Modular Code**: The script is broken down into small, single-purpose functions for readability and maintainability. Keep functions focused on one task and avoid large, monolithic blocks of code.
 
-- **Docstrings**: Each function has a clear docstring explaining its purpose. This is important for maintaining code and helping others understand the purpose of each function. 
+- **Docstrings**: Each function has a clear docstring explaining its purpose. This is important for maintaining code and helping others understand the purpose of each function.
 
 - **Use `pyproject.toml`**: This file is used to manage project metadata, dependencies, and entry points for command-line interface scripts. It helps standardize configurations for packaging and dependency management.
+
+- **Use virtual environments**: Use a separate virtual environment for each project. This ensure that the packages used in one project don’t conflict with other projects.
+
+- **Confirm you are in right virtual environment**: Check where your python executable is located.  The output should be in the same folder, e.g. something similar to `[...]/minimal_python_repo/.venv/Scripts/python`.
+
+  ```bash
+  gcm python # On Windows. Note, gcm stands for Get-Command
+  which python # On MacOS / LinuX
+  ```
