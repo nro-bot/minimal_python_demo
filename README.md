@@ -7,7 +7,7 @@ numbers from free-form text data using regex. It includes basic steps for
 text preprocessing, extracting data, and evaluating the results against
 ground truth values.
 
-## Setup Instructions
+## Setup
 
 You can install and manage dependencies and run this project using UV (a
 lightweight package manager) or pip (traditional package manager). Below
@@ -25,14 +25,13 @@ environment.
 
 ### Option 1: Using pip 
 
-If you prefer to use **pip**, the traditional package manager for Python, follow these steps:
+**pip** is the traditional package manager for Python. Follow these steps:
 
 1. Create a Virtual Environment
 
 Open a terminal (or command prompt) and navigate to the directory where you have the project.
 
 Run the following command to create a virtual environment:
-
      ```bash
      python -m venv env
      ```
@@ -67,13 +66,13 @@ Make sure you are in the venv, then install project dependencies:
     pip install uv
     ```
 
-2. Create virtual environment
+2. Navigate to the project directory, then create virtual environment
     ```bash
     deactivate  # just in case already in a virtual environment
     uv venv
     ```
 
-2. Make sure you are in the virtualenv.
+2. Activate the virtual environment. 
 - **Windows** (Command Prompt):
   ```bash
   .\.venv\Scripts\activate
@@ -103,14 +102,14 @@ Once the dependencies are installed, run the script to extract phone numbers fro
 Alternatively, run the script with Python directly:
 
 ```bash
-(env) python phone_number_extractor.py
+(env) python -m phone_number_extractor.py
 ```
 
 ## License
 
 TBD
 
-## Other thoughts 
+## Design Decision Notes
 
 - **Type Hints**: Use type hints for clarity and better IDE support. Type hints also allow use of static checkers like `mypy` to catch errors before code is run.
 
