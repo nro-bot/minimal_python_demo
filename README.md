@@ -15,25 +15,31 @@ are the instructions for both methods.
 
 The first step is to create a virtual environment to isolate the project
 dependencies from your system’s Python installation. This ensures that the
-packages used in the project don’t conflict with other projects. All
-following steps should be inside that environment.
+packages used in the project don’t conflict with other projects. i
+
+**Once activated, you should see `(env)` at the beginning of the terminal prompt, indicating that the virtual environment is active.**
+
+After creating it, make sure installation steps are all inside that
+environment.
+
 
 ### Option 1: Using pip 
 
 If you prefer to use **pip**, the traditional package manager for Python, follow these steps:
 
-#### Step 1: Create a Virtual Environment
+1. Create a Virtual Environment
 
-1. Open a terminal (or command prompt) and navigate to the directory where you have the project.
+Open a terminal (or command prompt) and navigate to the directory where you have the project.
 
-2. Run the following command to create a virtual environment:
+Run the following command to create a virtual environment:
 
      ```bash
      python -m venv env
      ```
-   This will create a virtual environment named `env`.
 
-#### Step 2: Activate the Virtual Environment
+This will create a virtual environment named `env`.
+
+2. Activate the Virtual Environment
 
 Once the virtual environment is created, activate it:
 
@@ -45,19 +51,14 @@ Once the virtual environment is created, activate it:
   ```bash
   source ./env/bin/activate
   ```
-
-**Once activated, you should see `(env)` at the beginning of the terminal prompt, indicating that the virtual environment is active.**
-
-#### Step 3: Install dependencies 
-
+3. Install dependencies 
 
 Make sure you are in the venv, then install project dependencies:
-    ```bash
-    (env) pip install -r requirements.txt
-    ```
+```bash
+(env) pip install -r requirements.txt
+```
 
 ### Option 2: Using uv
-
 
 [**UV**](https://uv.readthedocs.io/en/latest/) is a minimalist package manager for Python projects. Here's how to set it up.
 
@@ -72,7 +73,7 @@ Make sure you are in the venv, then install project dependencies:
     uv venv
     ```
 
-2. Make sure you are in the virtualenv (see activating venv step above). 
+2. Make sure you are in the virtualenv.
 - **Windows** (Command Prompt):
   ```bash
   .\.venv\Scripts\activate
