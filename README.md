@@ -1,15 +1,22 @@
+⚠️  Generated with LLM help, so stay alert and code carefully ⚠️
+
 # Phone Number Extractor
 
 This repository shows a minimalist Python project for extracting phone
-numbers from free-form text data using regex. It includes basic steps for text preprocessing,
-extracting data, and evaluating the results against ground truth values.
-
+numbers from free-form text data using regex. It includes basic steps for
+text preprocessing, extracting data, and evaluating the results against
+ground truth values.
 
 ## Setup Instructions
 
-You can install and manage dependencies and run this project using UV (a lightweight package manager) or pip (traditional package manager). Below are the instructions for both methods.
+You can install and manage dependencies and run this project using UV (a
+lightweight package manager) or pip (traditional package manager). Below
+are the instructions for both methods.
 
-The first step is to create a virtual environment to isolate the project dependencies from your system’s Python installation. This ensures that the packages used in the project don’t conflict with other projects. All following steps should be inside that environment.
+The first step is to create a virtual environment to isolate the project
+dependencies from your system’s Python installation. This ensures that the
+packages used in the project don’t conflict with other projects. All
+following steps should be inside that environment.
 
 ### Option 1: Using pip 
 
