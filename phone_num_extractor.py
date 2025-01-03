@@ -3,8 +3,8 @@ import pandas as pd
 import re
 
 # File Paths
-INPUT_FILE = Path("test_input.csv")
-GROUND_TRUTH_FILE = Path("ground_truth.csv")
+INPUT_FILE = Path("./data/test_input.csv")
+GROUND_TRUTH_FILE = Path("./data/ground_truth.csv")
 
 def load_csv(filepath: Path) -> pd.DataFrame:
     """
